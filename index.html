@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="Stylesheets/stylesheet1.css" />
+</head>
+
+<body>
+    <div id="Calculator">
+        <h1>Basic Calculator</h1>
+        <form>
+            <h4>Number One:</h4>
+            <input type='number' id='Operand1'>
+            <br>
+        </form>
+        <form>
+            <h4>Number Two:</h4>
+            <input type='number' id='Operand2'>
+            <br>
+        </form>
+        <br>
+        <button onclick='Addition()' id='+'>+</button>
+        <button onclick='Subtraction()' id='-'>-</button>
+        <button onclick='Division()' id='/'>/</button>
+        <button onclick='Multiplication()' id='*'>*</button>
+        <button onclick='Square()' id='Square'><sup>2</sup></button>
+        <p>
+            <strong>The Answer Is:
+                <div id="CalcAnswer"></div>
+            </strong>
+        </p>
+        <script>
+            function Addition() {
+                num1 = document.getElementById('Operand1').value;
+                num1 = Number(num1);
+                num2 = document.getElementById('Operand2').value;
+                num2 = Number(num2);
+                answer = num1 + num2;
+                document.getElementById('CalcAnswer').innerHTML = answer;
+                Colourchange('+');
+            }
+
+            function Subtraction() {
+                num1 = document.getElementById('Operand1').value;
+                num1 = Number(num1);
+                num2 = document.getElementById('Operand2').value;
+                num2 = Number(num2);
+                answer = num1 - num2;
+                document.getElementById('CalcAnswer').innerHTML = answer;
+                Colourchange('-');
+            }
+
+            function Division() {
+                num1 = document.getElementById('Operand1').value;
+                num1 = Number(num1);
+                num2 = document.getElementById('Operand2').value;
+                num2 = Number(num2);
+                answer = num1 / num2;
+                document.getElementById('CalcAnswer').innerHTML = answer;
+                Colourchange('/');
+            }
+
+            function Multiplication() {
+                num1 = document.getElementById('Operand1').value;
+                num1 = Number(num1);
+                num2 = document.getElementById('Operand2').value;
+                num2 = Number(num2);
+                answer = num1 * num2;
+                document.getElementById('CalcAnswer').innerHTML = answer;
+                Colourchange('*');
+            }
+            function Square() {
+                num1 = document.getElementById('Operand1').value;
+                num1 = Number(num1);
+                answer = num1 * num1;
+                document.getElementById('CalcAnswer').innerHTML = answer;
+                Colourchange('Square');
+            }
+            function Colourchange(button) {
+                if (button == '+') {
+                    document.getElementById('+').style.backgroundColor = "lightblue";
+                    document.getElementById("+").style.borderColor = "blue";
+                }
+                else {
+                    document.getElementById('+').style.backgroundColor = "";
+                    document.getElementById("+").style.borderColor = "";
+                }
+                if (button == '-') {
+                    document.getElementById('-').style.backgroundColor = "lightblue";
+                    document.getElementById("-").style.borderColor = "blue";
+                }
+                else {
+                    document.getElementById('-').style.backgroundColor = "";
+                    document.getElementById("-").style.borderColor = "";
+                }
+                if (button == '/') {
+                    document.getElementById('/').style.backgroundColor = "lightblue";
+                    document.getElementById("/").style.borderColor = "blue";
+                }
+                else {
+                    document.getElementById('/').style.backgroundColor = "";
+                    document.getElementById("/").style.borderColor = "";
+                }
+                if (button == '*') {
+                    document.getElementById('*').style.backgroundColor = "lightblue";
+                    document.getElementById("*").style.borderColor = "blue";
+                }
+                else {
+                    document.getElementById('*').style.backgroundColor = "";
+                    document.getElementById("*").style.borderColor = "";
+                }
+                if (button == 'Square') {
+                    document.getElementById('Square').style.backgroundColor = "lightblue";
+                    document.getElementById("Square").style.borderColor = "blue";
+                }
+                else {
+                    document.getElementById('Square').style.backgroundColor = "";
+                    document.getElementById("Square").style.borderColor = "";
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>

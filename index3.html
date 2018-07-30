@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calculator 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="Stylesheets/stylesheet1.css" />
+</head>
+
+<body>
+    <div id="calc">
+        <form id="viewport">
+            <input type="text" id="calculator" autofocus>
+            </p>
+        </form>
+        <br>
+        <button onclick="one()" id='one'>1</button>
+        <button onclick="two()" id='two'>2</button>
+        <button onclick="three()" id='three'>3</button>
+        <br>
+        <button onclick="four()" id='four'>4</button>
+        <button onclick="five()" id='five'>5</button>
+        <button onclick="six()" id='six'>6</button>
+        <br>
+        <button onclick="seven()" id='seven'>7</button>
+        <button onclick="eight()" id='eight'>8</button>
+        <button onclick="nine()" id='nine'>9</button>
+        <br>
+        <button onclick="zero()" id='zero'>0</button>
+        <button onclick="plus()" id='plus'>+</button>
+        <button onclick="minus()" id='minus'>-</button>
+        <br>
+        <button onclick="divide()" id='divide'>/</button>
+        <button onclick="multiply()" id='multiply'>*</button>
+        <button onclick="equal()" id="equal">=</button>
+        <br>
+        <button onclick="toChar()">toChar</button>
+        <script>
+            //Math Functions//
+
+            function one() {
+                var string = document.getElementById("calculator").value;
+
+                document.getElementById("calculator").value = string + "1";
+            }
+            function two() {
+                var string = document.getElementById("calculator").value;
+
+                document.getElementById("calculator").value = string + "2";
+            }
+            function three() {
+                var string = document.getElementById("calculator").value;
+
+                document.getElementById("calculator").value = string + "3";
+            }
+            function four() {
+                var string = document.getElementById("calculator").value;
+
+                document.getElementById("calculator").value = string + "4";
+            }
+            function five() {
+                var string = document.getElementById("calculator").value;
+
+                document.getElementById("calculator").value = string + "5";
+            }
+            function six() {
+                var string = document.getElementById("calculator").value;
+
+                document.getElementById("calculator").value = string + "6";
+            }
+            function seven() {
+                var string = document.getElementById("calculator").value;
+
+                document.getElementById("calculator").value = string + "7";
+            }
+            function eight() {
+                var string = document.getElementById("calculator").value;
+
+                document.getElementById("calculator").value = string + "8";
+            }
+            function nine() {
+                var string = document.getElementById("calculator").value;
+
+                document.getElementById("calculator").value = string + "9";
+            }
+            function zero() {
+                var string = document.getElementById("calculator").value;
+
+                document.getElementById("calculator").value = string + "0";
+            }
+            function plus() {
+                var string = document.getElementById("calculator").value;
+
+                document.getElementById("calculator").value = string + " + ";
+            }
+            function minus() {
+                var string = document.getElementById("calculator").value;
+
+                document.getElementById("calculator").value = string + " - ";
+            }
+            function divide() {
+                var string = document.getElementById("calculator").value;
+
+                document.getElementById("calculator").value = string + " / ";
+            }
+            function multiply() {
+                var string = document.getElementById("calculator").value;
+
+                document.getElementById("calculator").value = string + " * ";
+            }
+            function equal() {
+                var string = document.getElementById("calculator").value;
+
+                symbol(string);
+
+                //alert(answer);
+            }
+            function addition() {
+                //answer = operand1 + operand2;
+                alert("Brokens")
+            }
+            function subtraction() {
+                alert("Working!!");
+            }
+            function division() {
+                alert("Working!!!");
+            }
+            function multiplication() {
+                alert("Working!!!!");
+            }
+
+            //string manipulation//
+
+            function symbol(string) {
+
+                plus = string.indexOf("+");
+                minus = string.indexOf("-");
+                divide = string.indexOf("/");
+                multiply = string.indexOf("*");
+
+                toChar(plus, minus, divide, multiply, operand1, operand2);
+
+                symbol = string.indexOf(operator)
+                last = string.length;
+
+                operand1 = string.slice(0, symbol);
+                symbol += 1;
+                operand2 = string.slice(symbol, last);
+
+                operand1 = Number(operand1);
+                operand2 = Number(operand2);
+
+                /*alert(operator);
+                alert(operand1);
+                alert(operand2);
+                */
+            }
+
+            function toChar(op1, op2, op3, op4, operand1, operand2) {
+                string = document.getElementById("calculator").value;
+
+                op1 = string.indexOf("+");
+                op2 = string.indexOf("-");
+                op3 = string.indexOf("/");
+                op4 = string.indexOf("*");
+
+                char1 = string.charAt(op1);
+                char2 = string.charAt(op2);
+                char3 = string.charAt(op3);
+                char4 = string.charAt(op4);
+
+                plus = char1;
+                minus = char2;
+                divide = char3;
+                multiply = char4;
+
+                if (plus == "+") {
+                    addition();
+                    operator = "+";
+                }
+                else if (minus == "-") {
+                    subtraction();
+                    operator = "-";
+                }
+                else if (divide == "/") {
+                    division();
+                    operator = "/";
+                }
+                else if (multiply == "*") {
+                    multiplication();
+                    operator = "*";
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>

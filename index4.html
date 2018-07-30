@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Physics Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="Stylesheets/stylesheet1.css" />
+</head>
+
+<body>
+    <form>
+        <h4>Distance:</h4>
+        <input type='number' id='distance'>
+        <br>
+    </form>
+    <form>
+        <h4>Volts:</h4>
+        <input type='number' id='volts'>
+        <br>
+    </form>
+    <form>
+        <h4>Electric Field Strength:</h4>
+        <input type='number' id='fieldstrength'>
+        <br>
+    </form>
+    <br>
+    <button onclick='volts()' id='V'>Volts</button>
+    <button onclick='distance()' id='D'>Distance</button>
+    <button onclick='fieldstrength()' id='EFS'>Electric Field Strength</button>
+
+    <p id="answer"></p>
+    <script>
+        function volts() {
+            distance = document.getElementById("distance").value;
+            fieldstrength = document.getElementById("fieldstrength").value;
+
+            volts = fieldstrength * distance;
+
+            document.getElementById("answer").value = volts;
+        }
+        function distance() {
+
+        }
+        function fieldstrength() {
+
+        }
+
+    </script>
+</body>
+
+</html>
