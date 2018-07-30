@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+	<title>Simple Calculator</title>
+
+</head>
+<body>
+	<div id="wrapper">
+		<h1>Simple Calculator</h1>
+
+		<form>
+			<input type="text" id="display">
+		</form>
+		
+		<button onclick="entry(1)">1</button>
+		<button onclick="entry(2)">2</button>
+		<button onclick="entry(3)">3</button>
+		<button onclick="operation('+')">+</button><br>
+		<button onclick="entry(4)">4</button>
+		<button onclick="entry(5)">5</button>
+		<button onclick="entry(6)">6</button>
+		<button onclick="operation('-')">-</button><br>
+		<button onclick="entry(7)">7</button>
+		<button onclick="entry(8)">8</button>
+		<button onclick="entry(9)">9</button>
+		<button onclick="operation('/')">/</button><br>
+		<button onclick="entry(0)">0</button>
+		<button onclick="operation('*')">*</button><br>
+		<button onclick="calculate()">=</button><br><br>
+		<button onclick="reset()">C</button>
+				
+		<p>Answer:</p>
+		<p id="result"></p>
+	</div>
+	
+	<script>	
+		
+		
+		var operand1 = "";
+		var operand2 = "";
+		var operator;
+		var op1Entry = true; //This is to determine if the current number entry is for operand1
+		
+		function entry(num){
+			document.getElementById("display").value += num;
+			if(op1Entry == false){
+				operand2 += num;
+			}
+			
+		}
+		// **************** MAIN PROGRAM *************
+		function operation(op){
+			//store value of first operand1
+			operand1 = document.getElementById("display").value;
+			operator = op;
+			document.getElementById("display").value += op;
+			op1Entry = false;
+		}
+		
+		function calculate(){
+			//converts operands into number
+			operand1 = Number(operand1);
+			operand2 = Number(operand2);
+			
+			//calculates according to operator type
+			if(operator == "+"){
+				answer = operand1 + operand2;
+			}else if(operator == "-"){
+				answer = operand1 - operand2;
+			}else if(operator == "/"){
+				answer = operand1 / operand2;
+			}else {
+				answer = operand1 * operand2;
+			}
+			document.getElementById("display").value = answer;
+		}
+		
+		function reset(){
+			op1Entry = true;
+			document.getElementById("display").value = "";
+			operand1 = "";
+			operand2 = "";
+		}
+		
+
+	</script>
+</body>
+</html>

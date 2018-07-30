@@ -38,13 +38,23 @@
 
             volts = fieldstrength * distance;
 
-            document.getElementById("answer").value = volts;
+            document.getElementById("answer").innerHTML = volts + "V";
         }
         function distance() {
+            volts = document.getElementById("volts").value;
+            fieldstrength = document.getElementById("fieldstrength").value;
 
+            distance = volts / fieldstrength;
+
+            document.getElementById("answer").innerHTML = distance + "m";
         }
         function fieldstrength() {
+            volts = document.getElementById("volts").value;
+            distance = document.getElementById("distance").value;
 
+            fieldstrength = volts / distance
+
+            document.getElementById("answer").innerHTML = fieldstrength + "m-1";
         }
 
     </script>
